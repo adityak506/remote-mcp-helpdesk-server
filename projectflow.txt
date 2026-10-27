@@ -1,0 +1,104 @@
+1. Verify uv installation on the system by "uv --version" in terminal.
+
+2. Create a dir and open VScode pointing to that dir
+
+3. Execute following command: "uv init ."
+ UV ek super fast Python package manager hai (Rust mein likha gaya) jo pip aur virtualenv ka
+ alternative hai. Ye tumhe dependencies install karne, virtual environments banane, aur projects manage 
+ karne mein madad karta hai.
+ "uv init ." command tumhare folder ko ek Python project workspace bana deta hai. Current directory (.) mein
+  ek UV project initialize karta hai.
+ Ek pyproject.toml file create hoti hai → isme tum apne dependencies define kar sakte ho.
+
+ 4. Execute following command: "uv add fastmcp" -> fastmcp is a sdk which make very convieniently to create
+ MCP Servers.
+ uv.lock file create hoti hai → reproducible builds ke liye.
+ .venv is created via uv since we are using uv to add MCP AND INSIDE ALL DEPENDENCIES HAS BEEN ADDED
+  BY uv.
+
+ 5. Execute following command-> ".venv\Scripts\Activate.ps1"
+
+ 6. Verify fastmcp installation: "fastmcp version"
+ FastMCP version:                                                                           4.1.3
+MCP version:                                                                               2.3.0
+Python version:                                                                           3.11.9
+Platform:                                                              Windows-10-10.0.26200-SP0
+FastMCP root path: D:\IITPatna\GenAI-DEV-Projects\MCP-SERIES-LOCALSERVER\.venv\Lib\site-packages
+
+7. Add server code to main.py
+
+8. Command to run inspector -> "npx @modelcontextprotocol/inspector uv run python main.py"
+fastmcp internally supports this evaluation SDK or module which allows you to run this inspector object
+to test your MCP server. it acts as a client as it allows you to test before connecting with actual client.
+
+9. Command to run mcp server -> "uv run fastmcp run main.py"
+
+10. "uv run fastmcp install claude-desktop main.py" -> edit config of claudedesktop (open it via Aditya Kumar
+-> Settings -> Developer (in bottom) -> Edit Config)
+Successfully installed 'IT Helpdesk MCP Server' in Claude Desktop got as output in terminal and below json
+was added in the claude_desktop_config.json file.
+    "IT Helpdesk MCP Server": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--with",
+        "fastmcp",
+        "fastmcp",
+        "run",
+        "D:\\IITPatna\\GenAI-DEV-Projects\\MCP-SERIES-LOCALSERVER\\main.py"
+      ],
+      "env": {},
+      "transport": "stdio",
+      "type": null,
+      "cwd": null,
+      "timeout": null,
+      "keep_alive": null,
+      "description": null,
+      "icon": null,
+      "authentication": null
+    }
+Note: -> Please make sure fastmcp is running and claude desktop is opened.
+
+So, above are the steps to connect our local MCP server with claude code using config file.
+
+Optional step via editing config:
+---
+"my-mcp-server": {
+  "command": "C:\\Users\\Personal\\anaconda3\\Scripts\\uv.exe",
+  "args": [
+    "run",
+    "--directory",
+    "C:\\Users\\Personal\\Document\\MCP-Series-LocalServer",
+    "python",
+    "main.py"
+  ]
+}
+---
+
+
+** Steps to deploy our MCP server **
+-------------------------------------
+**Optional Steps A-H**
+A> Create a new folder & open in VSCode
+B> Install & verify uv installation: "where uv" or "uv version"
+C> Execute the command "uv init ."
+D> Run -> "uv add fastmcp"
+E> Activate the project venv before working: -> ".venv\Scripts\Activate.ps1"
+F> Verify: "fastmcp version"
+G> Add code to main.py file
+H> Also test on MCP inspector by doing: 
+Terminal1: "uv run python main.py"
+Terminal2: "npx @modelcontextprotocol/inspector uv run python main.py"
+
+I> Git Setup after creating a new github repo:
+git init
+git add README.md
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/vikashishere/remote-mcp-helpdesk-server.git
+git push -u origin main
+
+
+
+
