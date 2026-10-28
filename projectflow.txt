@@ -105,7 +105,8 @@ L> Click on the service card -> deployment -> logs; to check if app is running o
 M> Service card -> settings -> find: networking -> if no public domain exists, click -> Generate Domain
 (it will create something like: https://your-app-production.up.railway.app)
 
-N> Add this domain to our custom connect as: https:domain/mcp; then just restart claude
+N> Add this domain to our custom connect as: https:domain/mcp -> then just restart claude
+for example, copied from railway.com : https://your-app-production.up.railway.app/mcp
 
 
 
