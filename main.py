@@ -126,5 +126,5 @@ def estimate_resolution_time(priority: str) -> str:
     return mapping.get(priority, "To Be Determined")
 
 if __name__ == "__main__":
-    #mcp.run(transport="http", host="0.0.0.0", port=8080)
-    mcp.run() # for local use
+    mcp.run(transport="http", host="0.0.0.0", port=8080)
+    #mcp.run() # for local use and running MCP server locally.
