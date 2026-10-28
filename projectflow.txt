@@ -99,7 +99,7 @@ git branch -M main
 git remote add origin https://github.com/vikashishere/remote-mcp-helpdesk-server.git
 git push -u origin main
 
-J> create a requirements.txt -> fastmcp
+J> create a requirements.txt -> fastmcp -> add this file to github and merge it with main.
 K> Go to railway.com, signup & auth with github, select the repo & deploy
 L> Click on the service card -> deployment -> logs; to check if app is running or not
 M> Service card -> settings -> find: networking -> if no public domain exists, click -> Generate Domain
