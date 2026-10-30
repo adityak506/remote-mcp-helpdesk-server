@@ -6,8 +6,8 @@
  UV ek super fast Python package manager hai (Rust mein likha gaya) jo pip aur virtualenv ka
  alternative hai. Ye tumhe dependencies install karne, virtual environments banane, aur projects manage 
  karne mein madad karta hai.
- "uv init ." command tumhare folder ko ek Python project workspace bana deta hai. Current directory (.) mein
-  ek UV project initialize karta hai.
+ "uv init ." command tumhare folder ko ek Python project workspace bana deta hai. Current directory (.) 
+ mein ek UV project initialize karta hai.
  Ek pyproject.toml file create hoti hai → isme tum apne dependencies define kar sakte ho.
 
  4. Execute following command: "uv add fastmcp" -> fastmcp is a sdk which make very convieniently to create
