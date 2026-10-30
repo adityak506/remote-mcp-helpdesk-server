@@ -108,5 +108,20 @@ M> Service card -> settings -> find: networking -> if no public domain exists, c
 N> Add this domain to our custom connect as: https:domain/mcp -> then just restart claude
 for example, copied from railway.com : https://your-app-production.up.railway.app/mcp
 
+deploying to vercel
+a. add below line before calling the "if __name__ == "__main__":"
+app = mcp.http_app(stateless_http=True) #vercel deployment requires stateless http app.
+b. change the python version from 3.11 to 3.12 in the .python-version file.
+c. push these changes to github.
+d. deploy the github repository to Vercel after selecting github repository.
+e. Start the Inspector with "npx @modelcontextprotocol/inspector" using terminal and open the
+local URL it prints.
+f. On the Servers tab, choose Add Servers and select Streamable HTTP.
+Enter this URL:
+https://remote-mcp-helpdesk-server-rho.vercel.app/mcp
+g. Save/connect. Wait for the green Connected status.
+h. Click Tools, select a tool such as classify_ticket, enter its arguments, and run it.
+
+
 
 
